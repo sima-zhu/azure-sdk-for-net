@@ -26,6 +26,7 @@ jobs:
     pool:
       vmImage: 'windows-2019'
 
+    timeoutInMinutes: 360
     steps:
       - download: net-core
         artifact: packages
@@ -34,7 +35,6 @@ jobs:
         displayName: 'Run CredScan'
         inputs:
           debugMode: false
-        timeoutInMinutes: 360
       - task: securedevelopmentteam.vss-secure-development-tools.build-task-postanalysis.PostAnalysis@2
         displayName: 'Post Analysis'
         inputs:
