@@ -26,6 +26,7 @@ jobs:
     pool:
       vmImage: 'windows-2019'
 
+    timeoutInMinutes: 360
     steps:
       - download: net-core
         artifact: packages
